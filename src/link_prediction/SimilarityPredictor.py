@@ -2,6 +2,7 @@ import networkx as nx
 
 from src.link_prediction.LinkPredictor import LinkPredictor
 
+
 class SimilarityPredictor(LinkPredictor):
     """
     SimilarityPredictor class. Can use a flexible selection of similarity based metrics.

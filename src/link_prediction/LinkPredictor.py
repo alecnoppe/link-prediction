@@ -14,3 +14,6 @@ class LinkPredictor(ABC):
     def predict_all_links(self, graph: nx.Graph, spurious: bool=False) -> nx.Graph:
         raise NotImplementedError("Not implemented")
                 
+    @abstractmethod
+    def add_top_k_links(self, graph: nx.Graph, k:int) -> nx.Graph:
+        raise NotImplementedError("Not implemented")
