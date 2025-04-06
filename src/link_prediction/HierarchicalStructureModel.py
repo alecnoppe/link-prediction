@@ -251,8 +251,8 @@ class Dendrogram:
         for internal_node in self.internal_nodes:
             for i in internal_node.get_leaves_left():
                 for j in internal_node.get_leaves_right():
-                    P[i, j] = internal_node.probability
-                    P[j, i] = internal_node.probability
+                    P[i.label, j.label] = internal_node.probability
+                    P[j.label, i.label] = internal_node.probability
                     
         return P
     
@@ -509,4 +509,3 @@ class HSM(LinkPredictor):
                     
         for link in top_k_links: new_graph.add_edge(link[1], link[2])
         return new_graph
- 

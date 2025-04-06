@@ -6,6 +6,8 @@ if __name__ == "__main__":
     N=5
     G:nx.Graph = nx.erdos_renyi_graph(N, 0.9)
     D = HSM().create_dendrogram(G)
+    Gp = HSM().add_top_k_links(G, 3)
+    print(len(G.edges), len(Gp.edges))
     # print(list(G.nodes))
     # D = Dendrogram(list(range(0,N)), G)
     # l0 = D.leaves[0]
