@@ -505,7 +505,7 @@ class HSM(LinkPredictor):
                     top_k_links.append(
                         (mean_probability_table[i,j], i, j)
                     )
-                    top_k_links = sorted(top_k_links, key=lambda x: x[0])[:min(len(top_k_links), k)]
+                    top_k_links = sorted(top_k_links, key=lambda x: x[0], reverse=True)[:min(len(top_k_links), k)]
                     
         for link in top_k_links: new_graph.add_edge(link[1], link[2])
         return new_graph

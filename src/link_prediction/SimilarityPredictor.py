@@ -98,7 +98,7 @@ class SimilarityPredictor(LinkPredictor):
                 # Store the edge and similarity score
                 edge_scores.append((similarity_score, node, other_node))
         # Add top k edges to the new graph        
-        top_k_edges = sorted(edge_scores, lambda x: x[0])[:k]
+        top_k_edges = sorted(edge_scores, key=lambda x: x[0], reverse=True)[:k]
         for score, source, target in top_k_edges:
             new_graph.add_edge(source, target)
         

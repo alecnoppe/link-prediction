@@ -23,7 +23,7 @@ class Partition:
         assignment = np.random.choice(len(self.nodes), len(self.nodes))
         self.node_groups = dict()
         for node_idx, group_idx in enumerate(assignment): 
-            self.partition[group_idx].add(self.nodes[node_idx])
+            self.partition[group_idx].add(node_idx)
             self.node_groups[node_idx] = group_idx
 
     def links_between_groups(self, alpha:int, beta:int) -> int:
@@ -278,7 +278,7 @@ class SBM(LinkPredictor):
                     top_k_links.append(
                         (reliability_table[i,j], i, j)
                     )
-                    top_k_links = sorted(top_k_links, key=lambda x: x[0])[:min(len(top_k_links), k)]
+                    top_k_links = sorted(top_k_links, key=lambda x: x[0], reverse=True)[:min(len(top_k_links), k)]
                     
         for link in top_k_links: new_graph.add_edge(link[1], link[2])
         return new_graph
