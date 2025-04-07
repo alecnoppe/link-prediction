@@ -124,7 +124,7 @@ class Partition:
 class SBM(LinkPredictor):
     """
     Implementation of the Stochastic Block Model Maximum Likelihood method (HSM), introduced in:
-    [2]     R. Guimerà, & M. Sales-Pardo, Missing and spurious interactions and the reconstruction of complex networks, Proc. Natl. Acad. Sci. U.S.A. 106 (52) 22073-22078, https://doi.org/10.1073/pnas.0908366106 (2009). 
+    [2] Guimerà, R., & Sales-Pardo, M. (2009). Missing and spurious interactions and the reconstruction of complex networks. Proceedings of the National Academy of Sciences, 106(52), 22073-22078.
     
     SBM is a maximum-likelihood based method, which uses a MCMC algorithm to sample block models according to their likelihood.
     Using these sampled block models, we can infer the probability that two unconnected nodes should be connected.
