@@ -6,7 +6,7 @@ Networks can describe a great variety of systems, from social networks to comple
 
 In this repository, we implemented two common paradigms of link prediction: Similarity-based link prediction and Maximum-likelihood link prediction. For the former, 20 metrics are implemented from a popular survey paper [3]. For the latter, HSM and SBM approaches from [1], [2] are implemented. These methods can be applied on any unweighted undirected graph, like the ones created in `make_data.py`. To test the metrics, you can use `main.py` with the arguments listed under *Running instructions* below. For a more formal introduction to the topic, we refer to the papers or the example notebook `notebooks/link_prediction.ipynb`.
 
-If you take inspiration from this repository, make sure you give some credit :) it would be greatly appreciated.
+If you take inspiration from this repository, make sure you give credit :) it would be greatly appreciated.
 
 ## Similarity-based link prediction
 Similarity-based link prediction methods are based around the idea that similar nodes are likely to be connected. 
@@ -60,21 +60,24 @@ To use `main.py`, follow the instructions below:
 
 2. **Run the script**: Execute `main.py` from the command line with the following arguments:
     ```
-    python main.py --input <path_to_graph_file> --method <method_name> [--threshold <value>] [--output <path_to_output_file>]
+    python main.py --input <path_to_graph_file> --algorithm <algorithm_name> [--similarity <metric_name>] [--threshold <value>] [--output <path_to_output_file>] [--top_k <int>] [--plot]
     ```
     - `--input`: Path to the input graph file.
-    - `--method`: The link prediction method to use. Choose from the method names listed in the tables above (e.g., `similarity_common_neighbors`, `similarity_jaccard_index`, etc.).
+    - `--algorithm`: Algorithm to use, choose from [`SBM`, `HSM`, `Similarity`].
+    - `--similarity`: The similarity link prediction metric to use. Choose from the method names listed in the tables above (e.g., `similarity_common_neighbors`, `similarity_jaccard_index`, etc.).
     - `--threshold` (optional): Threshold value for similarity-based methods. Default is 0.5.
     - `--output` (optional): Path to save the output predictions. If not provided, results will be printed to the console.
+    - `--top_k` (optional): Number of links to add to the graph (defaults to 10)
+    - `--plot` (optional): Whether to plot the new graph
 
 3. **Example usage**:
     - To predict links using the Common Neighbors method:
       ```
-      python main.py --input data/graph.txt --method similarity_common_neighbors --threshold 4 --output results/predictions.txt
+      python main.py --input data/karate_club.txt --algorithm Similarity --similarity similarity_common_neighbors --threshold 4 --output predictions.txt
       ```
     - To use the Hierarchical Structure Model (HSM):
       ```
-      python main.py --input data/graph.txt --method hsm --output results/hsm_predictions.txt
+      python main.py --input data/karate_club.txt --algorithm HSM --output hsm_predictions.txt --top_k 5
       ```
 
 4. **Output**: The script will output the predicted links along with their reliability scores. If an output file is specified, the results will be saved in that file.
