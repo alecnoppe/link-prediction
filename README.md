@@ -1,8 +1,6 @@
 # Link Prediction in Python
 
-<div align="center">
-  ![Link Prediction Example](data/link_pred_example.png)
-</div>
+![Link Prediction Example](data/link_pred_example.png)
 
 Networks can describe a great variety of systems, from social networks to complex information systems. It is of crucial importance that these networks accurately model the real-world systems. *Link prediction* is the task of classifying the reliability of links in observed networks, and to identify links that are missing from the observed network. Depending on the network, link prediction is used to improve the accuracy of the network in case of missing data errors, predict the future system, or recommend links between nodes that could be connected based on their characteristics.
 
