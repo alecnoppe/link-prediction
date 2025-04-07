@@ -1,5 +1,6 @@
 data/*
 !data/.gitkeep
+!data/link_pred_example.png
 
 
 # Byte-compiled / optimized / DLL files
