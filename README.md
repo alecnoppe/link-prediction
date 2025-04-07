@@ -1,5 +1,7 @@
 # Link Prediction in Python
 
+![Link Prediction Example](data/link_pred_example.png)
+
 Networks can describe a great variety of systems, from social networks to complex information systems. It is of crucial importance that these networks accurately model the real-world systems. *Link prediction* is the task of classifying the reliability of links in observed networks, and to identify links that are missing from the observed network. Depending on the network, link prediction is used to improve the accuracy of the network in case of missing data errors, predict the future system, or recommend links between nodes that could be connected based on their characteristics.
 
 In this repository, we implemented two common paradigms of link prediction: Similarity-based link prediction and Maximum-likelihood link prediction. For the former, 20 metrics are implemented from a popular survey paper [3]. For the latter, HSM and SBM approaches from [1], [2] are implemented. These methods can be applied on any unweighted undirected graph, like the ones created in `make_data.py`. To test the metrics, you can use `main.py` with the arguments listed under *Running instructions* below. For a more formal introduction to the topic, we refer to the papers or the example notebook `notebooks/link_prediction.ipynb`.
